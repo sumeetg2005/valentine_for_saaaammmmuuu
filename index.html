@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For SAAAAMMMMUUUU ❤️ 12 Beautiful Memories</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff3366, #ff7eb3);
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            border: 3px solid white;
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .title {
+            color: #ff3366;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: heartbeat 2s ease infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .heart-large {
+            font-size: 100px;
+            animation: pulse 1.5s ease infinite;
+            margin: 20px 0;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .name {
+            font-size: 3.5em;
+            color: #ff3366;
+            font-weight: bold;
+            margin: 10px 0;
+            letter-spacing: 8px;
+            text-shadow: 3px 3px 0 rgba(255,51,102,0.2);
+            animation: glowName 2s ease infinite;
+        }
+
+        @keyframes glowName {
+            0%, 100% { text-shadow: 3px 3px 0 rgba(255,51,102,0.2); }
+            50% { text-shadow: 5px 5px 20px rgba(255,51,102,0.5); }
+        }
+
+        .question {
+            font-size: 2.2em;
+            margin: 30px 0;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff3366, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ============= 12 PHOTOS GALLERY ============= */
+        .gallery {
+            background: linear-gradient(135deg, #fff0f3, #ffe4e8);
+            padding: 40px 30px;
+            border-radius: 30px;
+            margin: 30px 0;
+            border: 2px dashed #ff3366;
+        }
+
+        .gallery-title {
+            color: #ff3366;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+
+        .gallery-subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .photo-item {
+            background: white;
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(255,51,102,0.2);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(255,51,102,0.4);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+
+        .photo-caption {
+            font-size: 1.2em;
+            color: #ff3366;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .photo-date {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* Date Section */
+        .date-section {
+            background: linear-gradient(135deg, #fff0f3, #ffe4e8);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border: 2px dashed #ff3366;
+        }
+
+        .date-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .date-btn {
+            background: white;
+            border: 2px solid #ff3366;
+            color: #ff3366;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .date-btn:hover {
+            background: #ff3366;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .date-btn.selected {
+            background: #ff3366;
+            color: white;
+        }
+
+        .date-confirmation {
+            margin-top: 20px;
+            color: #ff3366;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* Response Buttons */
+        .response-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .yes-btn {
+            background: linear-gradient(45deg, #ff3366, #ff6b6b);
+            color: white;
+            padding: 18px 50px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            flex: 1;
+        }
+
+        .yes-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(255,51,102,0.6);
+        }
+
+        .no-btn {
+            background: #ccc;
+            color: #666;
+            padding: 18px 50px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            flex: 1;
+            position: relative;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .yes-message {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            color: #155724;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 30px;
+            animation: slideIn 0.5s ease;
+        }
+
+        .yes-message h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+
+        .no-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 30px;
+        }
+
+        .no-message button {
+            background: #ff3366;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        .romantic-note {
+            font-size: 1.3em;
+            margin-top: 20px;
+            font-style: italic;
+            color: #ff3366;
+        }
+
+        .emoji-shower {
+            font-size: 2.5em;
+            margin-top: 20px;
+            animation: shower 1s infinite;
+        }
+
+        @keyframes shower {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .countdown {
+            font-size: 1.2em;
+            color: #ff3366;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255,51,102,0.1);
+            border-radius: 50px;
+        }
+
+        .special-message {
+            font-size: 1.2em;
+            color: #666;
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 5px solid #ff3366;
+            background: rgba(255,51,102,0.05);
+            border-radius: 0 20px 20px 0;
+            text-align: left;
+        }
+
+        .heart-burst {
+            font-size: 2em;
+            margin: 10px 0;
+            letter-spacing: 10px;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: fixed;
+            font-size: 20px;
+            animation: floatHeart linear;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0.8; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .title { font-size: 1.8em; }
+            .name { font-size: 2.2em; letter-spacing: 4px; }
+            .question { font-size: 1.6em; }
+            .response-buttons { flex-direction: column; }
+            .gallery-title { font-size: 1.6em; }
+        }
+
+        .memory-quote {
+            font-size: 1.3em;
+            color: #ff3366;
+            font-weight: bold;
+            margin-top: 30px;
+            font-style: italic;
+        }
+
+        /* Modal for full-size photos */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .modal-caption {
+            color: white;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .modal-date {
+            color: #ffb6c1;
+            font-size: 1.2em;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    
+    <div class="container">
+        <div class="card">
+            <!-- Main Content -->
+            <div id="mainContent">
+                <h1 class="title">💝 Happy Valentine's Day! 💝</h1>
+                
+                <div class="heart-large">❤️</div>
+                
+                <div style="margin: 20px 0;">
+                    <p style="font-size: 1.5em; color: #444;">To my beautiful,</p>
+                    <div class="name">SAAAAMMMMUUUU</div>
+                    
+                    <div class="special-message">
+                        <p style="font-size: 1.2em;">✨ You are the reason my heart smiles every day ✨</p>
+                    </div>
+                    
+                    <div class="question">
+                        Will you go out with me <br>on Valentine's Day?
+                    </div>
+                    
+                    <div class="countdown" id="countdown"></div>
+                    
+                    <div class="heart-burst">
+                        ❤️ 💕 💖 💗 💓
+                    </div>
+                </div>
+                
+                <!-- ============= 12 PHOTOS GALLERY - COMPLETE ============= -->
+                <div class="gallery">
+                    <div class="gallery-title">
+                        📸 12 Beautiful Memories with SAAAAMMMMUUUU 📸
+                    </div>
+                    <div class="gallery-subtitle">
+                        Every photo tells our love story. I treasure each moment with you.
+                    </div>
+                    
+                    <div class="photo-grid">
+                        <!-- PHOTO 1: First Meeting -->
+                        <div class="photo-item" onclick="openModal('photo_1.jpeg', 'Our First Meeting 💕', 'The day I met you, everything changed')">
+                            <img src="photo_1.jpeg" alt="Our First Meeting">
+                            <div class="photo-caption">Our First Meeting 💕</div>
+                            <div class="photo-date">The day our story began</div>
+                        </div>
+                        
+                        <!-- PHOTO 2: First Date -->
+                        <div class="photo-item" onclick="openModal('photo_2.jpeg', 'Our First Date 🌹', 'I knew you were special from this day')">
+                            <img src="photo_2.jpeg" alt="Our First Date">
+                            <div class="photo-caption">Our First Date 🌹</div>
+                            <div class="photo-date">A day I'll never forget</div>
+                        </div>
+                        
+                        <!-- PHOTO 3: Her Smile -->
+                        <div class="photo-item" onclick="openModal('photo_3.jpeg', 'Your Beautiful Smile ✨', 'The most beautiful smile in the world')">
+                            <img src="photo_3.jpeg" alt="Her Beautiful Smile">
+                            <div class="photo-caption">Your Beautiful Smile ✨</div>
+                            <div class="photo-date">Makes my heart melt every time</div>
+                        </div>
+                        
+                        <!-- PHOTO 4: Coffee Date -->
+                        <div class="photo-item" onclick="openModal('photo_4.jpeg', 'Coffee Date ☕', 'Simple moments with you are the best')">
+                            <img src="photo_4.jpeg" alt="Coffee Date">
+                            <div class="photo-caption">Coffee Date ☕</div>
+                            <div class="photo-date">Talking with you for hours</div>
+                        </div>
+                        
+                        <!-- PHOTO 5: Sunset -->
+                        <div class="photo-item" onclick="openModal('photo_5.jpeg', 'Sunset Together 🌅', 'Perfect sky, perfect company')">
+                            <img src="photo_5.jpeg" alt="Sunset Together">
+                            <div class="photo-caption">Sunset Together 🌅</div>
+                            <div class="photo-date">One of my favorite evenings</div>
+                        </div>
+                        
+                        <!-- PHOTO 6: Movie Night -->
+                        <div class="photo-item" onclick="openModal('photo_6.jpeg', 'Movie Night 🎬', 'Didn\'t watch the movie, just you')">
+                            <img src="photo_6.jpeg" alt="Movie Night">
+                            <div class="photo-caption">Movie Night 🎬</div>
+                            <div class="photo-date">Cozy night with you</div>
+                        </div>
+                        
+                        <!-- PHOTO 7: Her Birthday -->
+                        <div class="photo-item" onclick="openModal('photo_7.jpeg', 'Celebrating You 🎂', 'Your day, celebrating the amazing person you are')">
+                            <img src="photo_7.jpeg" alt="Her Birthday">
+                            <div class="photo-caption">Your Birthday 🎂</div>
+                            <div class="photo-date">So happy you were born</div>
+                        </div>
+                        
+                        <!-- PHOTO 8: Adventure -->
+                        <div class="photo-item" onclick="openModal('photo_8.jpeg', 'Our Adventure 🏞️', 'Every adventure is better with you')">
+                            <img src="photo_8.jpeg" alt="Our Adventure">
+                            <div class="photo-caption">Our Adventure 🏞️</div>
+                            <div class="photo-date">Exploring together</div>
+                        </div>
+                        
+                        <!-- PHOTO 9: Just Because -->
+                        <div class="photo-item" onclick="openModal('photo_9.png', 'Just Because 💝', 'No reason, just thinking of you')">
+                            <img src="photo_9.png" alt="Just Because">
+                            <div class="photo-caption">Just Because 💝</div>
+                            <div class="photo-date">One of my favorite photos</div>
+                        </div>
+                        
+                        <!-- PHOTO 10: Cute Moment -->
+                        <div class="photo-item" onclick="openModal('photo_10.png', 'Cute Moment 💕', 'This photo makes me smile every time')">
+                            <img src="photo_10.png" alt="Cute Moment">
+                            <div class="photo-caption">Cute Moment 💕</div>
+                            <div class="photo-date">You being you</div>
+                        </div>
+                        
+                        <!-- PHOTO 11: Special Day -->
+                        <div class="photo-item" onclick="openModal('photo_11.jpeg', 'Special Day ✨', 'Another beautiful memory with you')">
+                            <img src="photo_11.jpeg" alt="Special Day">
+                            <div class="photo-caption">Special Day ✨</div>
+                            <div class="photo-date">Perfect memory</div>
+                        </div>
+                        
+                        <!-- PHOTO 12: My Favorite -->
+                        <div class="photo-item" onclick="openModal('photo_12.jpeg', 'My Favorite Picture ❤️', 'This is the photo I look at when I miss you')">
+                            <img src="photo_12.jpeg" alt="My Favorite Picture">
+                            <div class="photo-caption">My Favorite Picture ❤️</div>
+                            <div class="photo-date">Absolutely perfect</div>
+                        </div>
+                    </div>
+                    
+                    <div class="memory-quote">
+                        "12 photos, 12 memories, 1 special person - YOU, SAAAAMMMMUUUU"
+                    </div>
+                    <p style="color: #666; margin-top: 15px;">
+                        Every photo reminds me why I want you to be my Valentine ❤️
+                    </p>
+                </div>
+                
+                <!-- Date Selection -->
+                <div class="date-section">
+                    <h3 style="color: #ff3366; font-size: 1.8em;">🌸 Pick our special day, SAAAAMMMMUUUU 🌸</h3>
+                    <div class="date-buttons">
+                        <button class="date-btn" onclick="selectDate('February 14 - Valentine\'s Day ❤️')">February 14 ❤️</button>
+                        <button class="date-btn" onclick="selectDate('February 15 - Cozy Dinner Date ☕')">February 15 ☕</button>
+                        <button class="date-btn" onclick="selectDate('February 16 - Romantic Weekend 🌹')">February 16 🌹</button>
+                    </div>
+                    <div id="dateConfirmation" class="date-confirmation"></div>
+                </div>
+                
+                <!-- Response Buttons -->
+                <div class="response-buttons">
+                    <button class="yes-btn" onclick="sayYes()">Yes! I'll be your Valentine! 💕</button>
+                    <button class="no-btn" id="noBtn" onclick="sayNo()">No 😢</button>
+                </div>
+            </div>
+            
+            <!-- Yes Message -->
+            <div id="yesMessage" class="hidden yes-message">
+                <h2>🎉 SAAAAMMMMUUUU SAID YES! 🎉</h2>
+                <div style="font-size: 80px; margin: 20px 0;">💖✨💖</div>
+                <p style="font-size: 1.8em; font-weight: bold;">Yay! Thank you, SAAAAMMMMUUUU! ❤️</p>
+                <p style="font-size: 1.3em; margin: 20px 0;">
+                    You just made this the best Valentine's Day ever! 
+                    I promise to make our date unforgettable and to keep making beautiful memories with you.
+                </p>
+                <div class="romantic-note">
+                    💌 SAAAAMMMMUUUU, you have my heart - always and forever 💌
+                </div>
+                <div style="background: rgba(255,51,102,0.1); padding: 20px; border-radius: 15px; margin: 20px 0;">
+                    <p style="font-size: 1.2em;">
+                        ✨ I can't wait to see your beautiful smile again ✨
+                    </p>
+                </div>
+                <div class="emoji-shower">
+                    💕 🌹 💕 🌹 💕 🌹 💕 🌹 💕
+                </div>
+                <p style="margin-top: 30px; font-size: 1.3em;">
+                    Forever yours, <br>
+                    <strong>Sumeet</strong> ❤️
+                </p>
+            </div>
+            
+            <!-- No Message -->
+            <div id="noMessage" class="hidden no-message">
+                <p style="font-size: 1.8em;">😘 Nice try, SAAAAMMMMUUUU! 😘</p>
+                <p style="font-size: 1.3em;">But you can't say no to love!</p>
+                <button onclick="tryAgain()">Click here to say Yes! 💕</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for viewing photos full size -->
+    <div id="photoModal" class="modal" onclick="closeModal()">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" class="modal-content" src="" alt="">
+        <div id="modalCaption" class="modal-caption"></div>
+        <div id="modalDescription" style="color: #ffb6c1; font-size: 1.2em; text-align: center; max-width: 80%;"></div>
+    </div>
+
+    <script>
+        // =============== YOUR INFORMATION ===============
+        const HER_NAME = "SAAAAMMMMUUUU";
+        const YOUR_NAME = "Suuummmiii";
+        // ================================================
+
+        let selectedDate = '';
+        let noClickCount = 0;
+
+        // =============== PHOTO MODAL FUNCTIONS ===============
+        function openModal(imgSrc, caption, description) {
+            const modal = document.getElementById('photoModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            const modalDescription = document.getElementById('modalDescription');
+            
+            modalImage.src = imgSrc;
+            modalCaption.innerHTML = caption;
+            modalDescription.innerHTML = description;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('photoModal').style.display = 'none';
+        }
+
+        // =============== DATE FUNCTIONS ===============
+        function selectDate(date) {
+            selectedDate = date;
+            
+            document.querySelectorAll('.date-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            event.target.classList.add('selected');
+            
+            document.getElementById('dateConfirmation').innerHTML = `✨ Perfect, SAAAAMMMMUUUU! I'll pick you up for ${date}! ✨`;
+        }
+
+        // =============== YES FUNCTION ===============
+        function sayYes() {
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('yesMessage').classList.remove('hidden');
+            createConfetti();
+            createFloatingHearts(100);
+            document.body.style.background = 'linear-gradient(135deg, #ff1493, #ff69b4)';
+            
+            setTimeout(() => {
+                alert(`🎉 SHE SAID YES! 🎉\n\nSAAAAMMMMUUUU is going to be my Valentine! 💕\n\nI'm the luckiest person in the world!`);
+            }, 500);
+        }
+
+        // =============== NO FUNCTIONS (Funny trap) ===============
+        function sayNo() {
+            noClickCount++;
+            
+            document.getElementById('noMessage').classList.remove('hidden');
+            const noBtn = document.getElementById('noBtn');
+            
+            if (noClickCount < 5) {
+                noBtn.style.position = 'absolute';
+                noBtn.style.left = Math.random() * 70 + '%';
+                noBtn.style.top = Math.random() * 70 + '%';
+                
+                const messages = [
+                    'Are you sure, SAAAAMMMMUUUU? 😢',
+                    'Think again, beautiful! 💕',
+                    'Please say yes! 🥺',
+                    'You know you want to! 😊',
+                    'Last chance to say yes! ❤️'
+                ];
+                noBtn.textContent = messages[noClickCount - 1];
+            } else {
+                noBtn.style.display = 'none';
+                alert(`Okay SAAAAMMMMUUUU, no more "No" button! Time to say yes! 😘`);
+                setTimeout(() => {
+                    sayYes();
+                }, 500);
+            }
+        }
+
+        function tryAgain() {
+            document.getElementById('noMessage').classList.add('hidden');
+            document.getElementById('mainContent').style.display = 'block';
+            
+            const noBtn = document.getElementById('noBtn');
+            noBtn.style.position = 'relative';
+            noBtn.style.left = 'auto';
+            noBtn.style.top = 'auto';
+            noBtn.textContent = 'No 😢';
+            noBtn.style.display = 'block';
+            noClickCount = 0;
+        }
+
+        // =============== CONFETTI ===============
+        function createConfetti() {
+            const emojis = ['❤️', '💕', '💖', '💗', '💓', '🌹', '✨', '🌸', '💘', '💝', '🎉'];
+            
+            for (let i = 0; i < 150; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+                    confetti.style.position = 'fixed';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.top = '-10%';
+                    confetti.style.fontSize = Math.random() * 40 + 20 + 'px';
+                    confetti.style.animation = 'floatHeart ' + (Math.random() * 3 + 2) + 's linear';
+                    confetti.style.zIndex = '9999';
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 5000);
+                }, i * 20);
+            }
+        }
+
+        // =============== FLOATING HEARTS ===============
+        function createFloatingHearts(count) {
+            const container = document.getElementById('floatingHearts');
+            
+            for (let i = 0; i < count; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = ['❤️', '💕', '💖', '💗', '💓', '🌸', '🌹'][Math.floor(Math.random() * 7)];
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.fontSize = Math.random() * 50 + 20 + 'px';
+                    heart.style.animationDuration = Math.random() * 4 + 3 + 's';
+                    container.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 7000);
+                }, i * 50);
+            }
+        }
+
+        // =============== COUNTDOWN TO VALENTINE'S DAY ===============
+        function updateCountdown() {
+            const valentineDate = new Date(new Date().getFullYear(), 1, 14);
+            const today = new Date();
+            
+            if (today > valentineDate) {
+                valentineDate.setFullYear(valentineDate.getFullYear() + 1);
+            }
+            
+            const diffTime = valentineDate - today;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            const countdownEl = document.getElementById('countdown');
+            if (diffDays === 0) {
+                countdownEl.innerHTML = `🎉 Happy Valentine's Day, SAAAAMMMMUUUU! 🎉`;
+            } else {
+                countdownEl.innerHTML = `❤️ Only ${diffDays} days until I get to celebrate with you, SAAAAMMMMUUUU! ❤️`;
+            }
+        }
+
+        // =============== INITIALIZE ===============
+        window.onload = function() {
+            createFloatingHearts(30);
+            setInterval(() => {
+                createFloatingHearts(5);
+            }, 2000);
+            
+            updateCountdown();
+            setInterval(updateCountdown, 3600000);
+            
+            setTimeout(() => {
+                alert(`💝 Happy Valentine's Day, SAAAAMMMMUUUU! 💝\n\nI made this special website with our 12 memories...\n\nWill you be my Valentine?`);
+            }, 100);
+        };
+
+        // No button runs away on hover
+        document.getElementById('noBtn')?.addEventListener('mouseover', function(e) {
+            if (noClickCount > 0 && noClickCount < 5) {
+                this.style.left = Math.random() * 70 + '%';
+                this.style.top = Math.random() * 70 + '%';
+            }
+        });
+
+        // Close modal with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
